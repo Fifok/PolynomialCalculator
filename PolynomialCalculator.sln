@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# 
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalculator.Console", "PolynomialCalculator.Console\PolynomialCalculator.Console.csproj", "{B066DFFE-6DFF-471E-8931-7C29C51FB6BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalc.Core", "PolynomialCalc.Core\PolynomialCalc.Core.csproj", "{345B08CE-BDA8-449B-B114-FC37831AB064}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +15,9 @@ Global
 		{B066DFFE-6DFF-471E-8931-7C29C51FB6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B066DFFE-6DFF-471E-8931-7C29C51FB6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B066DFFE-6DFF-471E-8931-7C29C51FB6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{345B08CE-BDA8-449B-B114-FC37831AB064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345B08CE-BDA8-449B-B114-FC37831AB064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345B08CE-BDA8-449B-B114-FC37831AB064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345B08CE-BDA8-449B-B114-FC37831AB064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
