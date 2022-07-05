@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using FluentAssertions;
+using System;
 
 namespace PolynomialCalc.Core.UnitTest;
 
@@ -22,6 +23,17 @@ public class MonomialTests
         result.Coefficient.Should().Be(expectedResult);
         result.Exponent.Should().Be(exponent);
         result.Variable.Should().Be('x');
+    }
+
+    [Test]
+    public void Add_ShouldThrowArgumentException_WhenExponentAreDifferent()
+    {
+        var testedMonomial = new Monomial(6, 3);
+        var addingMonomial = new Monomial(9, 5);
+
+        var action = () => testedMonomial.Add(addingMonomial);
+
+        action.Should().ThrowExactly<ArgumentException>();
     }
 
 }

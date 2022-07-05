@@ -22,6 +22,9 @@ public class Monomial
 
     public Monomial Add(Monomial monomial)
     {
+        if(Exponent != monomial.Exponent)
+            throw new ArgumentException("Exponents must be equal values");
+
         Coefficient += monomial.Coefficient;
         return this;
     }
