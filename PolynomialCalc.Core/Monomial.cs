@@ -19,4 +19,10 @@ public class Monomial
         Variable = variable;
         Exponent = exponent;
     }
+
+    public Monomial Add(Monomial monomial)
+    {
+        Coefficient += monomial.Coefficient;
+        return this;
+    }
 }
