@@ -57,4 +57,22 @@ public class PolynomialTests
 
         polynomial.Monomials.Should().BeEmpty();
     }
+
+    [Test]
+    public void Add_ShouldAddValueToConstantMonomial_Correctly()
+    {
+        var polynomial = new Polynomial();
+        var existingMonomial = new Monomial(5, 0);
+        var addingMonomial = new Monomial(6, 'y', 0);
+
+        polynomial.Add(existingMonomial);
+        polynomial.Add(addingMonomial);
+
+        polynomial.Monomials.Should().HaveCount(1);
+        
+        var monomial = polynomial.Monomials.Single();
+        monomial.Exponent.Should().Be(0);
+        monomial.Variable.Should().Be(null);
+        monomial.Coefficient.Should().Be(11);
+    }
 }

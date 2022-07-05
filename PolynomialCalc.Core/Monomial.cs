@@ -3,7 +3,7 @@ namespace PolynomialCalc.Core;
 public class Monomial
 {
     public int Coefficient { get; set; }
-    public char Variable { get; set; }
+    public char? Variable { get; set; }
     public int Exponent { get; set; }
 
     public Monomial(int coefficient, int exponent)
