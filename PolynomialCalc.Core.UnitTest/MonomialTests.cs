@@ -36,4 +36,15 @@ public class MonomialTests
         action.Should().ThrowExactly<ArgumentException>();
     }
 
+    [Test]
+    public void Add_ShouldThrowArgumentException_WhenVariableAreDifferent()
+    {
+        var testedMonomial = new Monomial(6, 'a', 5);
+        var addingMonomial = new Monomial(9, 'b', 5);
+
+        var action = () => testedMonomial.Add(addingMonomial);
+
+        action.Should().ThrowExactly<ArgumentException>();
+    }
+
 }

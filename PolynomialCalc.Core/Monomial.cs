@@ -25,6 +25,9 @@ public class Monomial
         if(Exponent != monomial.Exponent)
             throw new ArgumentException("Exponents must be equal values");
 
+        if(Variable != monomial.Variable)
+            throw new ArgumentException("Variable must be equal characters");
+
         Coefficient += monomial.Coefficient;
         return this;
     }
