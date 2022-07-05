@@ -41,4 +41,20 @@ public class PolynomialTests
         actualMonomial.Exponent.Should().Be(expectedMonomial.Exponent);
         actualMonomial.Variable.Should().Be('x');
     }
+
+    [Test]
+    [TestCase(6)]
+    [TestCase(-9)]
+    [TestCase(0)]
+    public void Add_ShouldRemoveMonomial_WhenResultedCoefficientIsZero(int coefficient)
+    {
+        var polynomial = new Polynomial();
+        var existingMonomial = new Monomial(coefficient,2);
+        var addingMonomial = new Monomial(-coefficient,2);
+
+        polynomial.Add(existingMonomial);
+        polynomial.Add(addingMonomial);
+
+        polynomial.Monomials.Should().BeEmpty();
+    }
 }
