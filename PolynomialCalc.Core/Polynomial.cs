@@ -4,6 +4,16 @@ public class Polynomial
     public List<Monomial> Monomials = new List<Monomial>();
     private Monomial? Constant;
 
+    public Polynomial Add(Polynomial polynomial)
+    {
+        foreach (var monomial in polynomial.Monomials)
+        {
+            Add(monomial);
+        }
+
+        return this;
+    }
+
     public void Add(Monomial monomial)
     {
         if(monomial.Coefficient == 0)
