@@ -9,7 +9,11 @@ public class PolynomialCalculator : IPolynomialCalculator
 {
     public Polynomial Add(Polynomial left, Polynomial right)
     {
-        left.Add(right);
+        foreach (var monomial in right.Monomials)
+        {
+            left.Add(monomial);
+        }
+
         return left;
     }
 }
