@@ -13,7 +13,7 @@ public class Monomial
         Exponent = exponent;
     }
 
-    public Monomial(int coefficient, char variable, int exponent)
+    public Monomial(int coefficient, char? variable, int exponent)
     {
         Coefficient = coefficient;
         Variable = variable;
@@ -30,5 +30,10 @@ public class Monomial
 
         Coefficient += monomial.Coefficient;
         return this;
+    }
+
+    public Monomial Clone()
+    {
+        return new Monomial(Coefficient, Variable, Exponent);
     }
 }
