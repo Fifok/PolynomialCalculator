@@ -29,7 +29,7 @@ public class Polynomial
         
         if(existingMonomial == null)
         {
-            Monomials.Add(monomial);
+            Monomials.Add(monomial.Clone());
             Constant = monomial;
             return;
         }
@@ -50,7 +50,7 @@ public class Polynomial
         
         if(existingMonomial == null)
         {
-            Monomials.Add(monomial);
+            Monomials.Add(monomial.Clone());
             return;
         }
 

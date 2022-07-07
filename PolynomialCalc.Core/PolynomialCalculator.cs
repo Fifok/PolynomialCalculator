@@ -9,11 +9,18 @@ public class PolynomialCalculator : IPolynomialCalculator
 {
     public Polynomial Add(Polynomial left, Polynomial right)
     {
-        foreach (var monomial in right.Monomials)
+        var result = new Polynomial();
+
+        foreach (var monomial in left.Monomials)
         {
-            left.Add(monomial);
+            result.Add(monomial);
         }
 
-        return left;
+        foreach (var monomial in right.Monomials)
+        {
+            result.Add(monomial);
+        }
+
+        return result;
     }
 }
