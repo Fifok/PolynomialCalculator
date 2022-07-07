@@ -14,23 +14,21 @@ public class Polynomial
         return this;
     }
 
-    public Polynomial Add(Monomial monomial)
+    public void Add(Monomial monomial)
     {
         if(monomial.Coefficient == 0)
         {
-            return this;
+            return;
         }
 
         if(monomial.Exponent == 0)
         {
             monomial.Variable = null;
             AddToConstant(monomial);
-            return this;
+            return;
         }
 
         AddToMonomial(monomial);
-
-        return this;
     }
 
     private void AddToConstant(Monomial monomial)
