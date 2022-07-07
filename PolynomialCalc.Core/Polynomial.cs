@@ -1,7 +1,7 @@
 ﻿namespace PolynomialCalc.Core;
 public class Polynomial
 {
-    public List<Monomial> Monomials = new List<Monomial>();
+    public List<Monomial> Monomials { get; } = new List<Monomial>();
     private Monomial? Constant;
 
     public Polynomial Add(Monomial monomial)
