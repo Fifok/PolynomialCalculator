@@ -4,21 +4,22 @@ public class Polynomial
     public List<Monomial> Monomials = new List<Monomial>();
     private Monomial? Constant;
 
-    public void Add(Monomial monomial)
+    public Polynomial Add(Monomial monomial)
     {
         if(monomial.Coefficient == 0)
         {
-            return;
+            return this;
         }
 
         if(monomial.Exponent == 0)
         {
             monomial.Variable = null;
             AddToConstant(monomial);
-            return;
+            return this;
         }
 
         AddToMonomial(monomial);
+        return this;
     }
 
     private void AddToConstant(Monomial monomial)
