@@ -4,6 +4,27 @@ public class Polynomial
     public List<Monomial> Monomials { get; } = new List<Monomial>();
     private Monomial? Constant;
 
+    public static Polynomial operator+(Polynomial left, Polynomial right)
+    {
+        return left.Add(right);
+    }
+    public Polynomial Add(Polynomial polynomial)
+    {
+        var result = new Polynomial();
+
+        foreach (var monomial in Monomials)
+        {
+            result.Add(monomial);
+        }
+
+        foreach (var monomial in polynomial.Monomials)
+        {
+            result.Add(monomial);
+        }
+
+        return result;
+    }
+    
     public Polynomial Add(Monomial monomial)
     {
         if(monomial.Coefficient == 0)
