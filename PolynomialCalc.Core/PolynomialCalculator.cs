@@ -7,20 +7,6 @@ public interface IPolynomialCalculator
 
 public class PolynomialCalculator : IPolynomialCalculator
 {
-    public Polynomial Add(Polynomial left, Polynomial right)
-    {
-        var result = new Polynomial();
+    public Polynomial Add(Polynomial left, Polynomial right) => left + right;
 
-        foreach (var monomial in left.Monomials)
-        {
-            result.Add(monomial);
-        }
-
-        foreach (var monomial in right.Monomials)
-        {
-            result.Add(monomial);
-        }
-
-        return result;
-    }
 }
