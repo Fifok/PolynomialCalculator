@@ -14,7 +14,7 @@ public class PolynomialTests
 
         polynomial.Add(expectedMonomial);
 
-        polynomial.Monomials.Count.Should().Be(1);
+        polynomial.Monomials.Length.Should().Be(1);
 
         var actualMonomial = polynomial.Monomials.Single();
         actualMonomial.Coefficient.Should().Be(expectedMonomial.Coefficient);
@@ -32,7 +32,7 @@ public class PolynomialTests
         polynomial.Add(existingMonomial);
         polynomial.Add(addingMonomial);
 
-        polynomial.Monomials.Count.Should().Be(1);
+        polynomial.Monomials.Length.Should().Be(1);
 
         var expectedMonomial = new Monomial(10,2);
 

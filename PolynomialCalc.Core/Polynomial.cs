@@ -1,8 +1,10 @@
 ﻿namespace PolynomialCalc.Core;
 public class Polynomial
 {
-    public List<Monomial> Monomials { get; } = new List<Monomial>();
+    private List<Monomial> _monomials = new List<Monomial>();
     private Monomial? Constant;
+
+    public Monomial[] Monomials => _monomials.ToArray();
 
     public static Polynomial operator+(Polynomial left, Polynomial right)
     {
@@ -12,12 +14,12 @@ public class Polynomial
     {
         var result = new Polynomial();
 
-        foreach (var monomial in Monomials)
+        foreach (var monomial in _monomials)
         {
             result.Add(monomial);
         }
 
-        foreach (var monomial in polynomial.Monomials)
+        foreach (var monomial in polynomial._monomials)
         {
             result.Add(monomial);
         }
@@ -45,12 +47,12 @@ public class Polynomial
 
     private void AddToConstant(Monomial monomial)
     {
-        var existingMonomial = Monomials
+        var existingMonomial = _monomials
             .SingleOrDefault(m => m.Exponent == monomial.Exponent);
         
         if(existingMonomial == null)
         {
-            Monomials.Add(monomial.Clone());
+            _monomials.Add(monomial.Clone());
             Constant = monomial;
             return;
         }
@@ -59,19 +61,19 @@ public class Polynomial
 
         if(addingResult.Coefficient == 0)
         {
-            Monomials.Remove(addingResult);
+            _monomials.Remove(addingResult);
             Constant = null;
         }
     }
 
     private void AddToMonomial(Monomial monomial)
     {
-         var existingMonomial = Monomials
+         var existingMonomial = _monomials
             .SingleOrDefault(m => m.Variable == monomial.Variable && m.Exponent == monomial.Exponent);
         
         if(existingMonomial == null)
         {
-            Monomials.Add(monomial.Clone());
+            _monomials.Add(monomial.Clone());
             return;
         }
 
@@ -79,7 +81,7 @@ public class Polynomial
 
         if(addingResult.Coefficient == 0)
         {
-            Monomials.Remove(addingResult);
+            _monomials.Remove(addingResult);
         }
     }
 }
