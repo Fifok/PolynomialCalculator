@@ -1,18 +1,20 @@
 ﻿
 
+using PolynomialCalc.Applicatiob;
+using PolynomialCalc.Core;
 using PolynomialCalc.Parsers;
 
-var original = "-2x^3 + 4x^2 + 2x - 6";
+Console.WriteLine("Welcome to Polynomial Calculator!");
 
-var parser = new PolynomialParser();
+Console.WriteLine("Enter first polynomial (eg. 2x^3 + 5x^2 - 3x - 5):\n");
+var firstPolynomialText = Console.ReadLine();
+Console.WriteLine("Enter second polynomial (eg. 2x^3 + 5x^2 - 3x - 5):\n");
+var secondPolynomialText = Console.ReadLine();
 
-var polynomial = parser.Parse(original);
+var result = new PolynomialService(new PolynomialParser(), new PolynomialCalculator())
+        .Add(firstPolynomialText, secondPolynomialText);
 
-Console.WriteLine("=========ORIGINAL=========");
-Console.WriteLine(original);
-Console.WriteLine("=========ORIGINAL=========");
-
-foreach (var term in polynomial.Monomials)
+foreach (var mono in result.Monomials)
 {
-    Console.WriteLine($"{term.Coefficient}x^{term.Exponent}");
+        Console.WriteLine($"{mono.Coefficient}{mono.Variable}^{mono.Exponent}");
 }
