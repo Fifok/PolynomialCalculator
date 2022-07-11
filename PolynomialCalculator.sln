@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalc.Core.UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalc.Parsers", "PolynomialCalc.Parsers\PolynomialCalc.Parsers.csproj", "{5552ED7E-232C-4467-9D2A-F37D0BA5EBA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalc.Application", "PolynomialCalc.Application\PolynomialCalc.Application.csproj", "{C8FDE70D-86DE-479F-B186-FB3CF7D5CCB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{5552ED7E-232C-4467-9D2A-F37D0BA5EBA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5552ED7E-232C-4467-9D2A-F37D0BA5EBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5552ED7E-232C-4467-9D2A-F37D0BA5EBA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8FDE70D-86DE-479F-B186-FB3CF7D5CCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8FDE70D-86DE-479F-B186-FB3CF7D5CCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8FDE70D-86DE-479F-B186-FB3CF7D5CCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8FDE70D-86DE-479F-B186-FB3CF7D5CCB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
