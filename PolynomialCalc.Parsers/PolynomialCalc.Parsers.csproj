@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\PolynomialCalc.Application\PolynomialCalc.Application.csproj" />
       <ProjectReference Include="..\PolynomialCalc.Core\PolynomialCalc.Core.csproj" />
     </ItemGroup>
 

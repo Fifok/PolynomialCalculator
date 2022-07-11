@@ -1,6 +1,6 @@
 using PolynomialCalc.Core;
 
-namespace PolynomialCalc.Parsers;
+namespace PolynomialCalc.Applicatiob;
 
 public interface IPolynomialParser
 {

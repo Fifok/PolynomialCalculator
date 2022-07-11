@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using PolynomialCalc.Applicatiob;
 using PolynomialCalc.Core;
 
 namespace PolynomialCalc.Parsers;
