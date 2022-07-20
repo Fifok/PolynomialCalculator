@@ -10,7 +10,7 @@ public class Polynomial
     {
         return left.Add(right);
     }
-    public Polynomial Add(Polynomial polynomial)
+    private Polynomial Add(Polynomial polynomial)
     {
         var result = new Polynomial();
 
