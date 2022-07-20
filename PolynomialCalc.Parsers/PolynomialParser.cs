@@ -6,7 +6,7 @@ namespace PolynomialCalc.Parsers;
 
 public class PolynomialParser : IPolynomialParser
 {
-    private static Regex _polynomialRegex = new(@"(?:(?<coefficient>-?[1-9]*)(?:x\^?(?<exponent>[1-9]?)))|(?<constant>-?[1-9]+)");
+    private static Regex _polynomialRegex = new(@"(?:(?<coefficient>-?[1-9]*)(?:(?<variable>[a-z])\^?(?<exponent>[1-9]?)))|(?<constant>-?[1-9]+)");
     
     public Polynomial Parse(string text)
     {
@@ -21,10 +21,13 @@ public class PolynomialParser : IPolynomialParser
             if (!string.IsNullOrWhiteSpace(coefficientString))
             {
                 var coefficient = int.Parse(coefficientString);
-        
+
+                var variableString = match.Groups["variable"].Value;
+                var variable = char.Parse(variableString);
+                
                 var exponentString = match.Groups["exponent"].Value;
                 var exponent = !string.IsNullOrWhiteSpace(exponentString) ?  int.Parse(exponentString) : 1;
-                var monomial = new Monomial(coefficient, exponent);
+                var monomial = new Monomial(coefficient, variable, exponent);
         
                 polynomial.Add(monomial);
             }
