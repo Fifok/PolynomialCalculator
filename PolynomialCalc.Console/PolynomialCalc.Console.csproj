@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PolynomialCalc.Parsers\PolynomialCalc.Parsers.csproj" />
+      <ProjectReference Include="..\PolynomialCalc.Presenters\PolynomialCalc.Presenters.csproj" />
     </ItemGroup>
 
 </Project>
