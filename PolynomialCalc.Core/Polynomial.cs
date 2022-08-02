@@ -2,8 +2,6 @@
 public class Polynomial
 {
     private List<Monomial> _monomials = new List<Monomial>();
-    private Monomial? Constant;
-
     public Monomial[] Monomials => _monomials.ToArray();
 
     public static Polynomial operator+(Polynomial left, Polynomial right)
@@ -37,33 +35,12 @@ public class Polynomial
         if(monomial.Exponent == 0)
         {
             monomial.Variable = null;
-            AddToConstant(monomial);
+            AddToMonomial(monomial);
             return this;
         }
 
         AddToMonomial(monomial);
         return this;
-    }
-
-    private void AddToConstant(Monomial monomial)
-    {
-        var existingMonomial = _monomials
-            .SingleOrDefault(m => m.Exponent == monomial.Exponent);
-        
-        if(existingMonomial == null)
-        {
-            _monomials.Add(monomial.Clone());
-            Constant = monomial;
-            return;
-        }
-
-        var addingResult = existingMonomial.Add(monomial);
-
-        if(addingResult.Coefficient == 0)
-        {
-            _monomials.Remove(addingResult);
-            Constant = null;
-        }
     }
 
     private void AddToMonomial(Monomial monomial)
