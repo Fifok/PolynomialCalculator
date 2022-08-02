@@ -1,12 +1,24 @@
+using PolynomialCalc.Core.Operations;
+
 namespace PolynomialCalc.Core;
 
 public interface IPolynomialCalculator
 {
-    Polynomial Add(Polynomial left, Polynomial right);
+    void SetOperation(IOperation operation);
+    Polynomial Execute(Polynomial left, Polynomial right);
 }
 
 public class PolynomialCalculator : IPolynomialCalculator
 {
-    public Polynomial Add(Polynomial left, Polynomial right) => left + right;
+    private IOperation _operation;
 
+    public void SetOperation(IOperation operation)
+    {
+        _operation = operation;
+    }
+
+    public Polynomial Execute(Polynomial left, Polynomial right)
+    {
+        return _operation.Execute(left, right);
+    }
 }

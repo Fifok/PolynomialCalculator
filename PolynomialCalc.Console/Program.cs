@@ -1,6 +1,6 @@
 ﻿
-
 using PolynomialCalc.Applicatiob;
+using PolynomialCalc.Console;
 using PolynomialCalc.Core;
 using PolynomialCalc.Parsers;
 using PolynomialCalc.Presenters;
@@ -15,7 +15,8 @@ Console.Write("Enter W2: ");
 var secondPolynomialText = Console.ReadLine();
 
 var result = new PolynomialService(new PolynomialParser(), new PolynomialCalculator())
-        .Add(firstPolynomialText, secondPolynomialText);
+        .SetOperation(OperationChooser.ChooseOperation('+'))
+        .ExecuteOperation(firstPolynomialText, secondPolynomialText);
         
 var presenter = new PolynomialPresenter();
 

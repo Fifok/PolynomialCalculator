@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using FluentAssertions;
+using PolynomialCalc.Core.Operations;
 
 namespace PolynomialCalc.Core.UnitTest;
 
@@ -14,7 +15,8 @@ public class PolynomialCalculatorTests
         var right = PrepareRightPolynomial();
 
         var calculator = new PolynomialCalculator();
-        var result = calculator.Add(left, right);
+        calculator.SetOperation(new AddingOperation());
+        var result = calculator.Execute(left, right);
         
         CheckAddedPolynomialsConstancy(left, right);
         CheckExpectedPolymonialAddResult(result);
