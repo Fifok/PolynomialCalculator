@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalc.Presenters",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalc.Presenters.UnitTests", "PolynomialCalc.Presenters.UnitTests\PolynomialCalc.Presenters.UnitTests.csproj", "{C46D6E93-5B3A-4DE1-A1A4-B298FF49C706}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomialCalc.Application.IntegrationTests", "PolynomialCalc.Application.IntegrationTests\PolynomialCalc.Application.IntegrationTests.csproj", "{4230924A-34ED-4081-85BB-FE6877F811C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{C46D6E93-5B3A-4DE1-A1A4-B298FF49C706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C46D6E93-5B3A-4DE1-A1A4-B298FF49C706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C46D6E93-5B3A-4DE1-A1A4-B298FF49C706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4230924A-34ED-4081-85BB-FE6877F811C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4230924A-34ED-4081-85BB-FE6877F811C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4230924A-34ED-4081-85BB-FE6877F811C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4230924A-34ED-4081-85BB-FE6877F811C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C8FDE70D-86DE-479F-B186-FB3CF7D5CCB3} = {3DDF2B9B-71A7-4BDF-B08B-1A3435501E03}
@@ -69,5 +75,6 @@ Global
 		{79DC64E0-D5A1-4841-B4EE-26DA1BCA2774} = {4F59CE9D-B73F-4577-B008-8669ED8E9CD1}
 		{A551E707-88FB-4070-9341-90CFA4DD4E3F} = {3DDF2B9B-71A7-4BDF-B08B-1A3435501E03}
 		{C46D6E93-5B3A-4DE1-A1A4-B298FF49C706} = {4F59CE9D-B73F-4577-B008-8669ED8E9CD1}
+		{4230924A-34ED-4081-85BB-FE6877F811C0} = {4F59CE9D-B73F-4577-B008-8669ED8E9CD1}
 	EndGlobalSection
 EndGlobal
