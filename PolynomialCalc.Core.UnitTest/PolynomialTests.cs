@@ -75,4 +75,32 @@ public class PolynomialTests
         monomial.Variable.Should().Be(null);
         monomial.Coefficient.Should().Be(11);
     }
+
+    [Test]
+    public void Add_ShouldNotAddValueToAnyMonomial_WhenCoefficientIsZero()
+    {
+        var polynomial = new Polynomial();
+        var existingMonomial = new Monomial(5, 1);
+
+        polynomial.Add(existingMonomial);
+
+        polynomial.Add(new Monomial(0, 1));
+
+        polynomial.Monomials.Should().HaveCount(1);
+        
+        var monomial = polynomial.Monomials.Single();
+        monomial.Exponent.Should().Be(1);
+        monomial.Variable.Should().Be('x');
+        monomial.Coefficient.Should().Be(5);
+    }
+    
+    [Test]
+    public void Add_ShouldNotAddMonomial_WhenCoefficientIsZero()
+    {
+        var polynomial = new Polynomial();
+
+        polynomial.Add(new Monomial(0, 1));
+
+        polynomial.Monomials.Should().BeEmpty();
+    }
 }
