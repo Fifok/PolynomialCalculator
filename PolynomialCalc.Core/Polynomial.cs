@@ -18,6 +18,18 @@ public class Polynomial
     {
         return left.Add(right);
     }
+    
+    public static Polynomial operator-(Polynomial left, Polynomial right)
+    {
+        var subtractingPolynomial = right.Clone();
+
+        foreach (var monomial in subtractingPolynomial._monomials)
+        {
+            monomial.Coefficient *= -1;
+        }
+        
+        return left.Add(subtractingPolynomial);
+    }
     private Polynomial Add(Polynomial polynomial)
     {
         var result = new Polynomial();
