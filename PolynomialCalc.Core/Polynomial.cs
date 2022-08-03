@@ -1,8 +1,18 @@
 ﻿namespace PolynomialCalc.Core;
 public class Polynomial
 {
-    private List<Monomial> _monomials = new List<Monomial>();
+    private List<Monomial> _monomials;
     public Monomial[] Monomials => _monomials.ToArray();
+
+    public Polynomial()
+    {
+        _monomials = new List<Monomial>();
+    }
+    
+    public Polynomial(List<Monomial> monomials)
+    {
+        _monomials = monomials;
+    }
 
     public static Polynomial operator+(Polynomial left, Polynomial right)
     {
