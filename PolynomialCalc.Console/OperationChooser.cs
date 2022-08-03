@@ -6,7 +6,8 @@ namespace PolynomialCalc.Console
     {
         private static readonly IReadOnlyDictionary<char, IOperation> _operations = new Dictionary<char, IOperation>
         {
-            { '+', new AddingOperation() }
+            { '+', new AddingOperation() },
+            { '-', new SubtractingOperation() },
         };
 
         public static IOperation ChooseOperation(char option)

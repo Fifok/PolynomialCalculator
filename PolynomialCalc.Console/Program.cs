@@ -14,8 +14,14 @@ var firstPolynomialText = Console.ReadLine();
 Console.Write("Enter W2: ");
 var secondPolynomialText = Console.ReadLine();
 
-var result = new PolynomialService(new PolynomialParser(), new PolynomialCalculator())
+var polynomialService = new PolynomialService(new PolynomialParser(), new PolynomialCalculator());
+
+var addingResult = polynomialService
         .SetOperation(OperationChooser.ChooseOperation('+'))
+        .ExecuteOperation(firstPolynomialText, secondPolynomialText);
+
+var subtractingResult = polynomialService
+        .SetOperation(OperationChooser.ChooseOperation('-'))
         .ExecuteOperation(firstPolynomialText, secondPolynomialText);
         
 var presenter = new PolynomialPresenter();
@@ -24,4 +30,7 @@ Console.WriteLine("Start calculation.");
 Console.WriteLine();
 
 Console.Write("W1 + W2 = ");
-Console.WriteLine(presenter.RepresentAsString(result));
+Console.WriteLine(presenter.RepresentAsString(addingResult));
+
+Console.Write("W1 - W2 = ");
+Console.WriteLine(presenter.RepresentAsString(subtractingResult));
