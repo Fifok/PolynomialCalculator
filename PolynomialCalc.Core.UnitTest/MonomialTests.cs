@@ -33,7 +33,7 @@ public class MonomialTests
 
         var action = () => testedMonomial.Add(addingMonomial);
 
-        action.Should().ThrowExactly<ArgumentException>();
+        action.Should().ThrowExactly<ArgumentException>().WithMessage("Exponents must be equal values");
     }
 
     [Test]
@@ -44,7 +44,7 @@ public class MonomialTests
 
         var action = () => testedMonomial.Add(addingMonomial);
 
-        action.Should().ThrowExactly<ArgumentException>();
+        action.Should().ThrowExactly<ArgumentException>().WithMessage("Variable must be equal characters");
     }
 
 }
