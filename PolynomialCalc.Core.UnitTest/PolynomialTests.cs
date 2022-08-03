@@ -103,4 +103,21 @@ public class PolynomialTests
 
         polynomial.Monomials.Should().BeEmpty();
     }
+    
+    [Test]
+    public void Clone_ShouldClonePolynomial_Correctly()
+    {
+        var polynomial = new Polynomial()
+            .Add(new Monomial(4, 6))
+            .Add(new Monomial(-2, 4))
+            .Add(new Monomial(7, 3))
+            .Add(new Monomial(-4, 'y', 3))
+            .Add(new Monomial(-43, 'y', 2))
+            .Add(new Monomial(231, 1))
+            .Add(new Monomial(-42, 0));
+
+        var result = polynomial.Clone();
+
+        result.Should().BeEquivalentTo(polynomial);
+    }
 }
