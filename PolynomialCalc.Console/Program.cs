@@ -14,7 +14,7 @@ var firstPolynomialText = Console.ReadLine();
 Console.Write("Enter W2: ");
 var secondPolynomialText = Console.ReadLine();
 
-var polynomialService = new PolynomialService(new PolynomialParser(), new PolynomialCalculator());
+var polynomialService = new PolynomialService(new PolynomialRegexParser(), new PolynomialCalculator());
 
 var addingResult = polynomialService
         .SetOperation(OperationChooser.ChooseOperation('+'))

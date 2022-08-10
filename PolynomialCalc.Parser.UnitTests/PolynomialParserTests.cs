@@ -14,7 +14,7 @@ public class PolynomialParserTests
     [Test]
     public void Parse_ShouldParse_PolynomialWithXVariable()
     {
-        var parser = new PolynomialParser();
+        var parser = new PolynomialRegexParser();
         var textPolynomial = "5x^5 + 4x^3 - 5x^2 + 2x - 4"; 
         
         var result = parser.Parse(textPolynomial);
@@ -32,7 +32,7 @@ public class PolynomialParserTests
     [Test]
     public void Parse_ShouldParse_PolynomialWithDifferentVariables()
     {
-        var parser = new PolynomialParser();
+        var parser = new PolynomialRegexParser();
         var textPolynomial = "5x^5 + 4y^3 - 5z^2 + 2x - 4y^2 + 5z + 4"; 
         
         var result = parser.Parse(textPolynomial);

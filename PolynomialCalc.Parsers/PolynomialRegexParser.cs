@@ -4,7 +4,7 @@ using PolynomialCalc.Core;
 
 namespace PolynomialCalc.Parsers;
 
-public class PolynomialParser : IPolynomialParser
+public class PolynomialRegexParser : IPolynomialParser
 {
     private static Regex _polynomialRegex = new(@"(?:(?<coefficient>-?[1-9]*)(?:(?<variable>[a-z])\^?(?<exponent>[1-9]?)))|(?<constant>-?[1-9]+)");
     
